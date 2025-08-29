@@ -1,0 +1,27 @@
+# Node modules (both frontend and backend)
+**/node_modules/
+
+# Environment variable files
+**/.env
+**/.env.*  # handles .env.production, .env.development, etc.
+
+# Vite build output
+frontend/dist/
+
+# React build output (if used without Vite)
+frontend/build/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
