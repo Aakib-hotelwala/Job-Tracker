@@ -109,3 +109,19 @@ export const LoginController = async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
+export const LogoutController = async (req, res) => {
+  try {
+    return res
+      .clearCookie("token", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "strict",
+      })
+      .status(200)
+      .json({ message: "Logout successfully" });
+  } catch (error) {
+    console.log(`Error in User Logout Controller: ${error}`);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+};

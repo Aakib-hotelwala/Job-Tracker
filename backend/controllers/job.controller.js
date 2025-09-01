@@ -171,3 +171,42 @@ export const DeleteJobController = async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
+export const GetDashboardStatsController = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    const totalJobs = await JobModel.countDocuments({ createdBy: userId });
+
+    const applied = await JobModel.countDocuments({
+      createdBy: userId,
+      status: "applied",
+    });
+
+    const interview = await JobModel.countDocuments({
+      createdBy: userId,
+      status: "interview",
+    });
+
+    const offer = await JobModel.countDocuments({
+      createdBy: userId,
+      status: "offer",
+    });
+
+    const rejected = await JobModel.countDocuments({
+      createdBy: userId,
+      status: "rejected",
+    });
+
+    return res.status(200).json({
+      totalJobs,
+      applied,
+      interview,
+      offer,
+      rejected,
+    });
+  } catch (error) {
+    console.log(`Error in Get Dashboard Stats Controller : ${error}`);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+};
