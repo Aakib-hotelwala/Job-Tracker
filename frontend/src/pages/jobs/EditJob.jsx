@@ -69,7 +69,6 @@ const EditJob = () => {
         </h2>
 
         <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-          {/* Company & Position */}
           <div className="flex flex-col md:flex-row gap-3">
             <input
               type="text"
@@ -91,7 +90,6 @@ const EditJob = () => {
             />
           </div>
 
-          {/* Job Type & Status */}
           <div className="flex flex-col md:flex-row gap-3">
             <select
               name="jobType"
@@ -120,7 +118,6 @@ const EditJob = () => {
             </select>
           </div>
 
-          {/* Location */}
           <input
             type="text"
             name="location"
@@ -130,7 +127,6 @@ const EditJob = () => {
             className="px-3 py-2 rounded-lg bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400 outline-none transition"
           />
 
-          {/* Description */}
           <textarea
             name="description"
             value={jobData.description || ""}
@@ -141,7 +137,6 @@ const EditJob = () => {
             className="px-3 py-2 rounded-lg bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-400 outline-none transition resize-none"
           />
 
-          {/* Buttons */}
           <div className="flex flex-col md:flex-row gap-3 mt-3">
             <button
               type="submit"

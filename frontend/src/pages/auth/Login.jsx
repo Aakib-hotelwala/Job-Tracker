@@ -40,7 +40,6 @@ const Login = () => {
 
         {error && <p className="text-red-400 mb-4 text-center">{error}</p>}
 
-        {/* Email Field */}
         <label className="block text-gray-300 mb-1 font-medium" htmlFor="email">
           Email Address
         </label>
@@ -54,7 +53,6 @@ const Login = () => {
           required
         />
 
-        {/* Password Field */}
         <label
           className="block text-gray-300 mb-1 font-medium"
           htmlFor="password"
@@ -71,7 +69,6 @@ const Login = () => {
           required
         />
 
-        {/* Submit Button */}
         <button
           type="submit"
           className="w-full py-3 rounded-xl bg-blue-500 hover:bg-cyan-500 text-white font-semibold transition duration-300"
